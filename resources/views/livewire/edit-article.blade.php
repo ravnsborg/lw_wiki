@@ -1,0 +1,55 @@
+<div class="max-w-xl mx-auto mt-10 p-6 bg-white rounded-xl shadow-md">
+    @if (session()->has('success'))
+        <div class="mb-4 p-3 text-green-700 bg-green-100 rounded">
+            {{ session('success') }}
+        </div>
+    @endif
+            <form wire:submit.prevent="update" class="space-y-5">
+                <div>
+                    <label for="category_id" class="block text-sm font-medium text-gray-700">Category</label>
+                    <select wire:model.defer="category_id" id="category_id" class="mt-1 block w-full text-gray-700 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                        @foreach($categoryList as $category)
+                            <option value="{{$category->id}}">{{$category->title}}</option>
+                @endforeach
+            </select>
+            @error('category_id') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
+        </div>
+
+        <div>
+            <label for="title" class="block text-sm font-medium text-gray-700">Article title</label>
+            <input wire:model.defer="title" id="title" type="text" class="mt-1 block w-full text-gray-700 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                value="{{$article->title}} dd"
+            >
+            @error('title') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
+        </div>
+
+        <div>
+            <label for="body" class="block text-sm font-medium text-gray-700">Article body</label>
+            <textarea
+                wire:model.defer="body"
+                id="body"
+                rows="15"
+                class="mt-1 block w-full text-gray-700 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+            >{{$article->body}}</textarea>
+            @error('body') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
+        </div>
+
+        <div class="flex justify-between">
+            <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
+                Send
+            </button>
+
+            <div class="ml-auto">
+                <button type="button"
+                        href="/"
+                        wire:navigate
+                        class="px-4 py-2 bg-yellow-700 text-white rounded-md hover:bg-yellow-900"
+                >
+                    Cancel
+                </button>
+            </div>
+        </div>
+
+
+    </form>
+</div>
