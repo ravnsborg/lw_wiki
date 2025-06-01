@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
 
-class CreateCategory extends Component
+class CategoryForm extends Component
 {
     #[Validate('required')]
     public string $categoryTitle = '';
@@ -29,11 +29,6 @@ class CreateCategory extends Component
     {
         $this->validate();
 
-        // todo validate already doesn't exist. use rules
-        //        $category = Category::where('title',$this->categoryTitle)
-        //            ->where('entity_id', $this->entityId)
-        //            ->get();
-
         Category::create([
             'title' => $this->categoryTitle,
             'entity_id' => $this->entityId,
@@ -44,7 +39,6 @@ class CreateCategory extends Component
 
     public function render()
     {
-        return view('livewire.create-category');
-
+        return view('livewire.category-form');
     }
 }

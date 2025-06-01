@@ -2,21 +2,22 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/category/create', \App\Livewire\CreateCategory::class)
+Route::get('/category/create', \App\Livewire\CategoryForm::class)
     ->middleware(['auth', 'verified'])
-    ->name('create-category');
+    ->name('category-show-create-form');
 
-Route::get('/article/create', \App\Livewire\CreateArticle::class)
+Route::get('/article/create', \App\Livewire\ArticleForm::class)
     ->middleware(['auth', 'verified'])
-    ->name('create-article');
+    ->name('article-show-create-form');
 
-Route::get('/article/{article}', \App\Livewire\EditArticle::class)
+Route::get('/article/{article}', \App\Livewire\ArticleForm::class)
     ->middleware(['auth', 'verified'])
-    ->name('edit-article');
+    ->name('article-show-update-form');
 
 // Authenticated dashboard route
 Route::middleware(['auth', 'verified'])->group(function () {
-    Route::view('/', 'dashboard');
+    Route::view('/', 'dashboard')
+        ->name('home');
 
     Route::view('dashboard', 'dashboard')
         ->middleware(['auth', 'verified'])

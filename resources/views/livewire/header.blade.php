@@ -64,10 +64,9 @@
     <!-- Right Section -->
     <div class="flex items-center space-x-4">
         <button class="bg-blue-600 hover:bg-blue-700 text-sm px-3 py-1.5 rounded text-white"
-                href="/article/create"
+                href="{{ route("article-show-create-form") }}"
                 wire:navigate
         >
-{{--        <button class="border border-blue-400 text-blue-400 text-sm px-3 py-1.5 rounded hover:bg-blue-900">--}}
             + Add New Article
         </button>
 

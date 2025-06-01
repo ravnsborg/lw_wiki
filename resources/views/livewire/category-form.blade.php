@@ -31,7 +31,7 @@
 
             <div class="ml-auto">
                 <button type="button"
-                        href="/"
+                        href="{{route("home")}}"
                         wire:navigate
                         class="px-4 py-2 bg-yellow-700 text-white rounded-md hover:bg-yellow-900"
                 >

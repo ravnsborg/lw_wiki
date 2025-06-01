@@ -4,7 +4,7 @@
         <div class="flex items-center">
             <h3 class="text-sm uppercase text-gray-400">Categories</h3>
             <i class="fa-solid fa-plus ml-auto"
-               href="/category/create"
+               href="{{route("category-show-create-form")}}"
                 wire:navigate
             ></i>
         </div>

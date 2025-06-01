@@ -28,12 +28,10 @@
                     <i class="{{ $favorites[$article->id] ? 'fas' : 'far' }} fa-star text-yellow-400 cursor-pointer"
                         wire:click="updateFavorite({{$article->id}})"
                         wire:key="fav-{{ $article->id }}"
-
-
                     ></i>
 
                     <i class="pl-3 far fa-pen-to-square text-blue-500"
-                       href="/article/{{$article->id}}"
+                       href="{{ route('article-show-update-form', [$article->id]) }}"
                        wire:navigate
                     ></i>
                 </div>
@@ -46,22 +44,9 @@
                     Last Updated: {{ $article->updated_at }}
                 </div>
             </div>
-            <div class="mt-7 p-3 bg-gray-800 rounded text-white">
+            <div class="mt-7 p-3 bg-gray-800 rounded text-white whitespace-pre-line">
                 {!! $this->highlightMatch($article->body) !!}
             </div>
         </section>
     @endforeach
-
-
-{{--    <section class="bg-gray-800 rounded p-4">--}}
-{{--        <h2 class="text-lg font-medium mb-2">External access features</h2>--}}
-{{--        <ul class="space-y-2 text-sm">--}}
-{{--            <li>Guests <span class="text-gray-400 ml-2">No guests added yet</span></li>--}}
-{{--            <li>Public links <span class="text-green-400 ml-2">Allowed for this instance</span></li>--}}
-{{--            <li>Anonymous access <span class="text-gray-400 ml-2">Not enabled for this instance</span></li>--}}
-{{--            <li>JSM access <span class="text-gray-400 ml-2">Not enabled for this instance</span></li>--}}
-{{--        </ul>--}}
-{{--        <a href="#" class="text-sm text-blue-400 hover:underline mt-2 inline-block">Manage global permissions</a>--}}
-{{--    </section>--}}
-
 </main>
