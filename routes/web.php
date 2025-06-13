@@ -27,6 +27,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
         ->middleware(['auth'])
         ->name('profile');
 
+    Route::get('/link', \App\Livewire\LinkForm::class)
+        ->middleware(['auth', 'verified'])
+        ->name('link-show-form');
+
+
     //    Route::get('/dashboard', function () {
     //        return view('dashboard');
     //    })->name('dashboard');

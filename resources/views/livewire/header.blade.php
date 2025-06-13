@@ -3,17 +3,15 @@
     <!-- Left Section -->
     <div class="flex items-center space-x-4">
         <!-- Menu Icon -->
-        <button class="text-gray-400 hover:text-white">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
-                 viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-        </button>
+{{--        <button class="text-gray-400 hover:text-white">--}}
+{{--            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"--}}
+{{--                 viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">--}}
+{{--                <path d="M4 6h16M4 12h16M4 18h16" />--}}
+{{--            </svg>--}}
+{{--        </button>--}}
 
         <!-- Logo -->
         <div class="flex items-center space-x-1">
-            <img src="https://wac-cdn.atlassian.com/dam/jcr:a62c67e2-5697-4e4c-8492-7724992e9f8b/Confluence-blue.svg" alt="Confluence"
-                 class="w-6 h-6">
             <span class="text-white font-semibold text-sm">Test Wiki</span>
         </div>
     </div>
@@ -21,7 +19,7 @@
     <nav class="shadow p-4">
         <ul class="flex space-x-6">
             <li class="relative group">
-                <a href="#" class="px-4 py-2  hover:text-blue-600 rounded focus:outline-none">
+                <a href="{{route("home")}}" class="px-4 py-2  hover:text-blue-600 rounded focus:outline-none">
                     Links
                     <i class="fa-solid fa-link "></i>
                 </a>
@@ -45,14 +43,11 @@
 {{--                    todo need divider to show here--}}
                         <!-- Vertical Divider -->
                         <li>
-                            <a href="/design" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-600">Manage Links</a>
+                            <hr>
+                            <a href="{{ route("link-show-form") }} class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-600">Manage Links</a>
                         </li>
 
                 </ul>
-            </li>
-
-            <li>
-                <a href="/contact" class="px-4 py-2 hover:text-blue-600">Contact</a>
             </li>
         </ul>
     </nav>
