@@ -40,7 +40,7 @@ Think of it as your own searchable knowledge base, tailored to your needs.
 
 ---
 
-## Code Style
+## Code Style with Pint "manual"
 
 This is using Laravel's code style preset called Pint. To ensure that your code is formatted correctly, run:
 
@@ -52,6 +52,29 @@ If you want to just see what files are not formatted correctly, run:
     ```
     ./vendor/bin/sail composer pint-test
     ```
+
+## Code Style with Pint "automatic"
+Another option is to have Pint run automatically on code commits. Run the following commands.
+
+    mkdir -p .git/hooks
+    touch .git/hooks/pre-commit
+    chmod +x .git/hooks/pre-commit    
+
+Then edit this file: `.git/hooks/pre-commit`
+
+
+    #!/bin/sh
+    
+    echo "Running Laravel Pint via Sail..."
+    
+    ./vendor/bin/sail pint
+    
+    if [ $? -ne 0 ]; then
+    echo "Pint failed. Please fix formatting before committing."
+    exit 1
+    fi
+
+
 
 ---
 
