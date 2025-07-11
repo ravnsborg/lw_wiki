@@ -54,7 +54,7 @@ If you want to just see what files are not formatted correctly, run:
     ```
 
 ## Code Style with Pint "automatic"
-Another option is to have Pint run automatically on code commits. If Pint fails, then the commit process will not proceed.
+Another option is to have Pint run automatically on code commits.
 
 Run the following commands.
 
