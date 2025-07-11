@@ -41,7 +41,7 @@ class ArticleList extends Component
         );
     }
 
-    #[On('article-list:articles-by-category')]
+      #[On('article-list:articles-by-category')]
     public function getCategoryArticles($id)
     {
         session()->flash('message', 'Post successfully updated.');
