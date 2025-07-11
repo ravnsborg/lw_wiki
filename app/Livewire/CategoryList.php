@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use App\Models\Category;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 use Livewire\Component;
 
 class CategoryList extends Component

@@ -12,7 +12,7 @@
         <ul class="mt-2 space-y-1.5">
             @foreach($categoryList as $category)
                 <li
-                    class="block px-2 hover:bg-gray-700 rounded"
+                    class="block px-2 hover:bg-gray-700 rounded listing_item"
                     wire:key="{{ $category->id }}"
                     wire:click="$dispatch('article-list:articles-by-category', { id: {{ $category->id }} })"
                 >

@@ -44,7 +44,7 @@
                     Last Updated: {{ $article->updated_at }}
                 </div>
             </div>
-            <div class="mt-7 p-3 bg-gray-800 rounded text-white whitespace-pre-line">
+            <div class="mt-7 p-3 bg-blue-200 rounded  text-gray-900  whitespace-pre-line">
                 {!! $this->highlightMatch($article->body) !!}
             </div>
         </section>

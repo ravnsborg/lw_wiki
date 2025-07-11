@@ -19,9 +19,9 @@
 <body class="bg-gray-900 text-white font-sans">
 <livewire:header />
 
-<div class="flex h-screen">
+<div class="flex">
     <!-- Sidebar -->
-    <aside class="w-[350px] bg-gray-800 p-4 space-y-6 pt-1">
+    <aside class="w-[350px] bg-gray-800 p-4 space-y-6 pt-1 rounded">
         <h2 class="text-lg font-semibold mb-4">Wiki Admin</h2>
         <livewire:category-list />
         <hr class="mt-10"/>

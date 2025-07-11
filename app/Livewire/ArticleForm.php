@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use App\Models\Article;
 use App\Models\Category;
+use App\Services\PatternFormatter;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Livewire\Attributes\Validate;
@@ -39,8 +40,6 @@ class ArticleForm extends Component
             $this->article = new Article;
         }
 
-        // todo. in form, need to select current category id to instead of always first one
-
         $this->categoryList = Category::where('entity_id', Auth::user()->preferred_entity_id)->get();
     }
 
@@ -48,12 +47,11 @@ class ArticleForm extends Component
     {
         $this->validate();
 
-        Log::info('cat to save is '.$this->category_id);
         Article::updateOrCreate(
             ['id' => $this->article->id],
             [
                 'title' => $this->title,
-                'body' => $this->body,
+                'body' => PatternFormatter::convert($this->body),
                 'category_id' => $this->category_id,
                 'is_favorite' => $this->isFavorite,
             ]
