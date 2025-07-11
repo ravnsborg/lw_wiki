@@ -6,7 +6,6 @@ use App\Models\Article;
 use App\Models\Category;
 use App\Services\PatternFormatter;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Log;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
 

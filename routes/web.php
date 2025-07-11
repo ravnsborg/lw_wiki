@@ -31,7 +31,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
         ->middleware(['auth', 'verified'])
         ->name('link-show-form');
 
-
     //    Route::get('/dashboard', function () {
     //        return view('dashboard');
     //    })->name('dashboard');
