@@ -64,7 +64,6 @@ class ArticleForm extends Component
 
     public function render()
     {
-        //        Log::info('in render article form component with cat id ' . $this->category_id);
         return view('livewire.article-form');
     }
 }
