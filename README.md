@@ -27,6 +27,7 @@ Think of it as your own searchable knowledge base, tailored to your needs.
    ```
 
 6. Run DB migrations to setup your table schema
+
     ```sail artisan migrate```
 
 7. Now you need to bring up the containers with the following command:

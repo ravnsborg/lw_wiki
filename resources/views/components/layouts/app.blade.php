@@ -1,4 +1,4 @@
-{{--This is the layout for standalone livewire components. Like for forms. kmrkmr--}}
+{{--This is the layout for standalone livewire components. Like for forms. --}}
 
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
