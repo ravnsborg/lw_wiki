@@ -10,7 +10,6 @@
     <!-- Center: Search -->
     <livewire:search />
 
-
     <!-- Right Section -->
     <div class="flex items-center space-x-4">
         <div class="relative" x-data="{ open: false }">

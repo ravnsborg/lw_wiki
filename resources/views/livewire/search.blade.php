@@ -1,4 +1,5 @@
-<div class="flex-1 max-w-md mx-4">
+
+<div class="flex-1 max-w-md mx-4 absolute left-1/2 transform -translate-x-1/2 w-[400px]">
     <input
         type="text"
         placeholder="Search"

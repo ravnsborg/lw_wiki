@@ -38,7 +38,6 @@
 
                 <div class="absolute mt-1 mb-4 text-xs text-yellow-600">
                     Category: {{ $article->category->title }}
-                    Last Updated: {{ $article->updated_at }}
                 </div>
                 <div class="absolute right-0 mt-1 mb-4 text-xs text-yellow-600">
                     Last Updated: {{ $article->updated_at }}
