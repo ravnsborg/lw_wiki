@@ -75,7 +75,7 @@ class ArticleList extends Component
     private function loadArticles(string $fieldName, int $fieldValue)
     {
         $this->reset('articles');
-        $this->articles = Article::where($fieldName, $fieldValue)->get();
+        $this->articles = Article::where($fieldName, $fieldValue)->orderBy('title')->get();
     }
 
     /*

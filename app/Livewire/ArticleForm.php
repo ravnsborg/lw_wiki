@@ -39,7 +39,7 @@ class ArticleForm extends Component
             $this->article = new Article;
         }
 
-        $this->categoryList = Category::where('entity_id', Auth::user()->preferred_entity_id)->get();
+        $this->categoryList = Category::where('entity_id', Auth::user()->preferred_entity_id)->orderBy('title')->get();
     }
 
     public function save()
