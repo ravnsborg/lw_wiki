@@ -21,21 +21,22 @@ class Header extends Component
     /*
      * Refresh entity and reload page to that entity's content
      */
-    public function refreshEntity($id)
+    public function refreshEntity($entityId)
     {
-        $user = User::where('preferred_entity_id', Auth::user()->preferred_entity_id)->first();
-        if ($user) {
-            $user->preferred_entity_id = $id;
+        // Only update if entity id exists
+        $entity = Entity::find($entityId);
+        if ($entity) {
+            $user = User::where('preferred_entity_id', Auth::user()->preferred_entity_id)->first();
+            $user->preferred_entity_id = $entityId;
             $user->save();
         }
-        $this->redirect('/');
 
+        $this->redirect('/');
     }
 
     public function mount()
     {
         $this->entities = Entity::select('title', 'id')->orderBy('title')->get();
-
         $this->selectedEntity = $this->entities->find(Auth::user()->preferred_entity_id);
         $this->selectedEntityId = $this->selectedEntity->id;
         $this->links = Link::orderBy('title')->get();
