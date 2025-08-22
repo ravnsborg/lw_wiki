@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use App\Models\Entity;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -19,6 +22,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        // Share the authenticated user with all views
+        View::composer('layouts.app', function ($view) {
+            $pageTitle = (Auth::user()) ? Entity::find(Auth::user()->preferred_entity_id)->title : null;
+            $view->with('pageTitle', $pageTitle.' '.config('app.name'));
+        });
     }
 }
