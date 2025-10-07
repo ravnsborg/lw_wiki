@@ -22,7 +22,7 @@
                 + Add New Article
             </button>
 
-
+            <!-- Links Dropdown -->
             <div class="relative inline-block text-left">
                 <button @click="open = !open"
                         class="pl-3 pr-3 pt-1 pb-1 rounded-full bg-purple-600 items-center justify-center text-sm font-semibold text-white">
@@ -30,7 +30,6 @@
                     <i class="fa-solid fa-link"></i>
                 </button>
 
-                <!-- Links Dropdown -->
                 <div x-show="open" @click.away="open = false"
                      class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded shadow-lg z-50">
                     @foreach($links as $link)
@@ -46,6 +45,24 @@
                         Manage Links
                     </a>
                 </div>
+            </div>
+
+            <!-- link test -->
+            <div class="inline-flex items-center ml-7">
+                <select
+                    class=" pl-3 pr-3 pt-1 pb-1 rounded-full bg-purple-600  items-center justify-center text-sm font-semibold appearance-none cursor-pointer"
+                >
+                    <option>Select a Link</option>
+                    @foreach($links as $link)
+                        <option
+                        >
+                        <a href="{{$link->url}}" target="_blank"
+                           class="block px-4 text-sm text-gray-700 hover:bg-gray-100">
+                            {{$link->title}}
+                        </a>
+                        </option>
+                    @endforeach
+                </select>
             </div>
 
 
