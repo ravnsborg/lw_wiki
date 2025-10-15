@@ -25,7 +25,6 @@ class ArticleList extends Component
         return view('livewire.article-list', [$this->articles]);
     }
 
-    // todo not working
     public function highlightMatch($text)
     {
         if (! $this->searchString || strlen($this->searchString) < 3) {

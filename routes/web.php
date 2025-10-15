@@ -14,6 +14,10 @@ Route::get('/article/{article}', \App\Livewire\ArticleForm::class)
     ->middleware(['auth', 'verified'])
     ->name('article-show-update-form');
 
+Route::get('/entity/create', \App\Livewire\EntityForm::class)
+    ->middleware(['auth', 'verified'])
+    ->name('entity-show-create-form');
+
 // Authenticated dashboard route
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::view('/', 'dashboard')

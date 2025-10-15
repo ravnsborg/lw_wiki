@@ -36,7 +36,7 @@ class Header extends Component
 
     public function mount()
     {
-        $this->entities = Entity::select('title', 'id')->orderBy('title')->get();
+        $this->entities = Entity::select('title', 'id')->where('user_id', Auth::user()->id)->orderBy('title')->get();
         $this->selectedEntity = $this->entities->find(Auth::user()->preferred_entity_id);
         $this->selectedEntityId = $this->selectedEntity->id;
         $this->links = Link::orderBy('title')->get();
