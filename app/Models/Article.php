@@ -17,7 +17,7 @@ class Article extends Model
     protected $casts = [
         'is_favorite' => 'boolean',
     ];
-        
+
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class, 'category_id');

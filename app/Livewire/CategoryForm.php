@@ -26,8 +26,8 @@ class CategoryForm extends Component
     }
 
     /*
-     * Create new category and 
-     * its child article 
+     * Create new category and
+     * its child article
      */
     public function save()
     {

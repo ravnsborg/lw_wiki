@@ -19,7 +19,7 @@ class Entity extends Model
     {
         return $this->belongsTo(User::class, 'user_id');
     }
-    
+
     public function categories(): HasMany
     {
         return $this->hasMany(Category::class, 'entity_id');
