@@ -2,17 +2,16 @@
 
 namespace App\Livewire;
 
+use App\Models\Entity;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
-use App\Models\Entity;
-
 
 class EntityForm extends Component
 {
     #[Validate('required')]
     public string $entityTitle = '';
-       
+
     public function save()
     {
         $this->validate();
@@ -24,7 +23,7 @@ class EntityForm extends Component
 
         $this->redirect('/');
     }
-    
+
     public function render()
     {
         return view('livewire.entity-form');

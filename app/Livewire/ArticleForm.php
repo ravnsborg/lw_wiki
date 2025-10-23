@@ -31,9 +31,9 @@ class ArticleForm extends Component
 
         $this->categoryList = Category::where('entity_id', Auth::user()->preferred_entity_id)->orderBy('title')->get();
 
-//        if ($this->categoryList->count() === 1){
-//            $categoryId = $this->categoryList[0]->id;
-//        }
+        //        if ($this->categoryList->count() === 1){
+        //            $this->category_id = $this->categoryList[0]->id;
+        //        }
 
         if ($article) {
             $this->article = $article;
@@ -45,9 +45,9 @@ class ArticleForm extends Component
             $this->category_id = Category::pluck('id')->first();
             $this->article = new Article;
         }
-       
+
     }
-    
+
     public function save()
     {
         $this->validate();

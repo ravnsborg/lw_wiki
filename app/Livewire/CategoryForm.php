@@ -25,6 +25,10 @@ class CategoryForm extends Component
         $this->entityId = Auth::user()->preferred_entity_id;
     }
 
+    /*
+     * Create new category and 
+     * its child article 
+     */
     public function save()
     {
         $this->validate();
@@ -32,6 +36,9 @@ class CategoryForm extends Component
         Category::create([
             'title' => $this->categoryTitle,
             'entity_id' => $this->entityId,
+        ])->articles()->create([
+            'title' => $this->articleTitle,
+            'body' => $this->articleContent,
         ]);
 
         $this->redirect('/');
