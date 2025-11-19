@@ -35,6 +35,7 @@ class ArticleList extends Component
 
         return preg_replace(
             "/($escaped)/i",
+            // '<span style="background-color: yellow; class="bg-green-100  text-yellow-300 font-semibold">$1</span>',
             '<span style="background-color: greenyellow; class="bg-green-100  text-yellow-300 font-semibold">$1</span>',
             $text // escape before highlighting
         );
