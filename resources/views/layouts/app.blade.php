@@ -13,41 +13,31 @@
 
     <!-- Styles -->
     <livewire:styles />
+ 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+ 
 </head>
 
-<body class="bg-gray-900 text-white font-sans">
-<livewire:header />
+<body class="h-screen flex flex-col bg-gray-100 dark:bg-gray-600 dark:text-gray-200">
 
-<div class="flex">
-    <!-- Sidebar -->
-    <aside class="w-[350px] bg-gray-800 p-4 space-y-6 pt-1 rounded">
-        <h2 class="text-lg font-semibold mb-4">Wiki Admin</h2>
-        <livewire:category-list />
-        <hr class="mt-10"/>
-        <livewire:favorite-list />
-        <hr class="mt-10"/>
-    </aside>
+    <livewire:header />
 
-    {{--    todo this line goes in component to fire off flash message  ->   session()->flash('message', 'Post successfully updated.');--}}
+    <!-- Main Container -->
+    <div class="flex flex-1 overflow-hidden">
 
-    <livewire:article-list />
+        <!-- Left Sidebar -->
+        <aside class="w-64 bg-gray-100 p-4 pt-6 flex flex-col gap-4 dark:bg-gray-600">
+            <livewire:category-list />
+            <livewire:favorite-list />
+        </aside>
 
-</div>
+        <!-- Main Content Area -->
+        <main class="flex-1 overflow-y-auto p-6">
+            <livewire:article-list />
+        </main>
+
+    </div>
+
 </body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 </html>
