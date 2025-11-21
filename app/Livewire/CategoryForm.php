@@ -9,13 +9,13 @@ use Livewire\Component;
 
 class CategoryForm extends Component
 {
-    #[Validate('required')]
+    #[Validate('required|min:2')]
     public string $categoryTitle = '';
 
-    #[Validate('required')]
+    #[Validate('required|min:2')]
     public string $articleTitle = '';
 
-    #[Validate('required')]
+    #[Validate('required|min:2')]
     public string $articleContent = '';
 
     public ?int $entityId = null;
@@ -26,8 +26,7 @@ class CategoryForm extends Component
     }
 
     /*
-     * Create new category and
-     * its child article
+     * Create new category and its child article
      */
     public function save()
     {

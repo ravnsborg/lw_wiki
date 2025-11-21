@@ -8,7 +8,7 @@
     <form wire:submit.prevent="save" class="space-y-5">
         <div>
             <label for="category_id" class="block text-sm font-medium text-gray-700">Category</label>
-            <select wire:model="category_id" id="category_id" class="mt-1 block w-full text-gray-700 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+            <select wire:model.fill="category_id" id="category_id" class="mt-1 block w-full text-gray-700 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
                 @foreach($categoryList as $category)
                     <option value="{{$category->id}}">{{$category->title}}</option>
                 @endforeach

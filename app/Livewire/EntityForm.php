@@ -9,7 +9,7 @@ use Livewire\Component;
 
 class EntityForm extends Component
 {
-    #[Validate('required')]
+    #[Validate('required|min:2')]
     public string $entityTitle = '';
 
     public function save()

@@ -13,10 +13,10 @@ class ArticleForm extends Component
 {
     public Article $article;
 
-    #[Validate('required')]
+    #[Validate('required|min:2')]
     public string $title = '';
 
-    #[Validate('required')]
+    #[Validate('required|min:2')]
     public string $body = '';
 
     public bool $isFavorite = false;
@@ -28,24 +28,15 @@ class ArticleForm extends Component
 
     public function mount($article = null)
     {
-
         $this->categoryList = Category::where('entity_id', Auth::user()->preferred_entity_id)->orderBy('title')->get();
-
-        //        if ($this->categoryList->count() === 1){
-        //            $this->category_id = $this->categoryList[0]->id;
-        //        }
 
         if ($article) {
             $this->article = $article;
             $this->title = $article->title;
             $this->body = $article->body;
-            $this->category_id = $article->category->id;
         } else {
-            // Set default category id selected
-            $this->category_id = Category::pluck('id')->first();
             $this->article = new Article;
         }
-
     }
 
     public function save()
