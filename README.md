@@ -28,10 +28,12 @@ Think of it as your own searchable knowledge base, tailored to your needs.
     ```
 
 5. Now you need to bring up the containers with the following command:
-   `./vendor/bin/sail up -d`
+
+    `./vendor/bin/sail up -d`
 
 6. Generate encryption key
-   `./vendor/bin/sail artisan key:generate`
+
+    `./vendor/bin/sail artisan key:generate`
 
 7. Run DB migrations to setup your table schema
 
